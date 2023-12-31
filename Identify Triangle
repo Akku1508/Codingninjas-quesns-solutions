@@ -1,0 +1,80 @@
+Problem statement
+Given three positive integers as X, Y and Z representing three sides of a triangle, write a program that determines whether the triangle formed by the sides exist or not. If the triangle exists, classify it as isosceles, scalene or equilateral.
+
+Note :For a triangle to exist(valid),the sum of any two of its sides should be greater than the third side
+
+
+
+Detailed explanation ( Input/output format, Notes, Images )
+Input Format:
+Line 1: X(First Side)
+Line 2: Y(Second Side)
+Line 3: Z(Third Side)
+Output Format:
+First line of output prints "Not a Triangle"(If triangle doesn't exist) or "Scalene/Isosceles/Equilateral Triangle" (If the triangle exists)
+Constraints:
+1<=X,Y,Z<=10^5
+
+#include<iostream>
+using namespace std;
+
+int main() {
+	int X,Y,Z;
+	
+	cin>>X>>Y>>Z;
+	if(((X+Y)>Z) && ((Y+Z)>X) && ((X+Z)>Y))
+	{
+		if(X==Y)
+		{
+			if(X==Z)
+			{
+				cout<<"Equilateral Triangle";
+			}
+
+			else 
+			{
+				cout << "Isosceles Triangle";
+			}
+				
+		} 
+		else if(Y==Z)
+		{	
+			if(Z==X)
+			{
+				cout<<"Equilateral Triangle";
+			}
+
+			else 
+			{
+				cout << "Isosceles Triangle";
+			}
+
+		}
+		else if (X==Z)
+		{
+			if(Y==X)
+			{
+				cout<<"Equilateral Triangle";
+                        }
+
+            else {
+                cout << "Isosceles Triangle";
+                        }
+        }
+				
+				
+		 else 
+		 {
+            cout << "Scalene Triangle";
+        }
+
+        }
+
+    else
+	{
+		cout<<"Not a Triangle";
+	}
+	
+
+	
+}
